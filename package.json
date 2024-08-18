@@ -1,5 +1,5 @@
 {
-    "name": "@aguidrevitch/libeot-wrapper",
+    "name": "libeot-wrapper",
     "version": "0.0.10",
     "main": "dist/bindings.js",
     "types": "dist/bindings.d.ts",
@@ -27,8 +27,6 @@
     "files": [
         "dist/**/*",
         "libeot/**/*",
-        "libeot/Makefile.am",
-        "libeot/configure.ac",
         "src/**/*",
         "binding.gyp"
     ],
