@@ -6,6 +6,8 @@ Makefile*
 configure*
 .*
 !.clang-format
+!Makefile.am
+!configure.ac
 aclocal.m4
 autom4te.cache
 ar-lib
