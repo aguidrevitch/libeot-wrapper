@@ -10,9 +10,9 @@
         "libeot/inc/libeot"
       ],
       "ldflags" : [
-        "-L<(module_root_dir)/build/Release/",
+        "-L<(module_root_dir)/build/Release",
         "-leot",
-        "-Wl,-rpath,'$$ORIGIN'"
+        "-Wl,-rpath,<(module_root_dir)/build/Release"
       ],
       "cflags": [
         "-Wno-cast-function-type"

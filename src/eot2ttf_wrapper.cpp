@@ -7,13 +7,14 @@
 
 #if defined(_WIN32) || defined(_WIN64)
     #include <windows.h>
-    #define LIBRARY_NAME "@loader_path/libeot.dll"
+    #define LIBRARY_NAME "libeot.dll"
 #elif defined(__APPLE__) || defined(__MACH__)
     #include <dlfcn.h>
-    #define LIBRARY_NAME "@loader_path/libeot.0.dylib"
+    #include <mach-o/dyld.h>  // for _NSGetExecutablePath
+    #define LIBRARY_NAME "libeot.0.dylib"  // @loader_path is the directory of the current executable
 #else
     #include <dlfcn.h>
-    #define LIBRARY_NAME "libeot.so.0.0.0"
+    #define LIBRARY_NAME "libeot.so"
 #endif
 
 using namespace v8;
