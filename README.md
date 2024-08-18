@@ -3,13 +3,13 @@ A Node.js wrapper for [libeot](https://github.com/umanwizard/libeot/), provided 
 # Installation
 
 ```
-npm install @aguidrevitch/libeot-wrapper
+npm install libeot-wrapper
 ```
 
 # Usage
 
 ```
-import { eot2ttf } from "@aguidrevitch/libeot-wrapper";
+import { eot2ttf } from "libeot-wrapper";
 
 const ttfBuffer = eot2ttf(eotBuffer);
 ```
