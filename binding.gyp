@@ -21,7 +21,7 @@
           "outputs": ["./libeot/.libs/"],
           "action": [
             "sh", "-c",
-            "cd ./libeot && make distclean && autoreconf --install && ./configure && make"
+            "cd ./libeot && autoreconf --install && ./configure && make"
           ],
           "condition": "OS=='mac' or OS=='linux'"
         },
