@@ -1,19 +1,36 @@
 {
-  "name": "libeot-wrapper",
-  "version": "1.0.0",
-  "main": "index.js",
-  "gypfile": true,
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "node-gyp rebuild"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "nan": "^2.20.0",
-    "node-gyp": "^10.2.0"
-  },
-  "devDependencies": {},
-  "description": ""
+    "name": "@aguidrevitch/libeot-wrapper",
+    "version": "0.0.1",
+    "main": "dist/binding.js",
+    "types": "dist/binding.d.ts",
+    "gypfile": true,
+    "scripts": {
+        "pretest": "tsc",
+        "preversion": "npm run lint && tsc && git diff -s --exit-code",
+        "lint": "eslint --ext .mts,.ts .",
+        "fix": "eslint --ext .mts,.ts . --fix",
+        "test": "node --napi-modules ./tests/test.mjs",
+        "install": "node-gyp rebuild"
+    },
+    "directories": {
+        "lib": "lib"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "eslint": "^8.38.0",
+        "nan": "^2.20.0",
+        "node-gyp": "^10.2.0"
+    },
+    "files": [
+        "dist/**/*",
+        "libeot/**/*",
+        "src/**/*"
+    ],
+    "devDependencies": {
+        "@types/node": "^22.4.0",
+        "typescript": "^5.5.4"
+    },
+    "description": ""
 }
