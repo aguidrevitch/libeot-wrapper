@@ -2,13 +2,13 @@
     "compilerOptions": {
         "declaration": true,
         "lib": [
-            "esnext"
+            "ES2022"
         ],
-        "module": "commonjs",
+        "module": "NodeNext",       // Or "esnext", "node16", "nodenext"
+        "moduleResolution": "NodeNext",
         "outDir": "./dist",
         "rootDir": "./lib",
         "strict": true,
-        "target": "es6",
         "types": [
             "node"
         ],
