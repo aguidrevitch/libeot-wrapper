@@ -11,8 +11,7 @@
         "fix": "eslint --ext .mts,.ts . --fix",
         "build": "tsc",
         "test": "node --napi-modules ./tests/test.mjs",
-        "install": "node-gyp rebuild",
-        "postinstall": "node-gyp rebuild"
+        "install": "node-gyp rebuild"
     },
     "directories": {
         "lib": "lib"

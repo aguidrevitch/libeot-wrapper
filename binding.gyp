@@ -20,14 +20,6 @@
       "cflags_cc": [
         "-Wno-cast-function-type"
       ],
-      "copies": [
-        {
-          "destination": "<(module_root_dir)/build/Release",
-          "files": [
-            "<!@(ls -1 libeot/.libs/*)",
-          ],
-        },
-      ],
       "actions": [
         {
           "action_name": "build_libeot",
@@ -38,6 +30,15 @@
             "cd ./libeot && autoreconf --install && ./configure && make"
           ],
           "condition": "OS=='mac' or OS=='linux'"
+        },
+        {
+            "action_name": "copy_libeot",
+            "inputs": [],
+            "outputs": ["./build/Release/"],
+            "action": [
+                "sh", "-c",
+                "cp ./libeot/.libs/* ./build/Release/"
+            ],
         }
       ],
       "condition": "OS=='mac' or OS=='linux'"
