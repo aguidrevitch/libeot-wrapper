@@ -10,15 +10,23 @@
         "libeot/inc/libeot"
       ],
       "ldflags" : [
-        "-L../libeot/.libs",
-        "-leot.0"
-   			"-Wl,-rpath,'$$ORIGIN'"
-	    ],
+        "-L<(module_root_dir)/build/Release/",
+        "-leot",
+        "-Wl,-rpath,'$$ORIGIN'"
+      ],
+      "cflags": [
+        "-Wno-cast-function-type"
+      ],
+      "cflags_cc": [
+        "-Wno-cast-function-type"
+      ],
       "copies": [
         {
           "destination": "<(module_root_dir)/build/Release",
-          "files": ["libeot/.libs/libeot.0.dylib"]
-        }
+          "files": [
+            "<!@(ls -1 libeot/.libs/*)",
+          ],
+        },
       ],
       "actions": [
         {
@@ -30,8 +38,9 @@
             "cd ./libeot && autoreconf --install && ./configure && make"
           ],
           "condition": "OS=='mac' or OS=='linux'"
-        },
-      ]
+        }
+      ],
+      "condition": "OS=='mac' or OS=='linux'"
     }
   ]
 }

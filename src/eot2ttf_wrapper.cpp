@@ -2,19 +2,18 @@
 #include "libeot.h"
 #include <iostream>
 #include <fstream>
-#include <dlfcn.h>
 
 #define DEBUG_LOG(...) std::cerr << "DEBUG: " << __VA_ARGS__ << std::endl
 
 #if defined(_WIN32) || defined(_WIN64)
     #include <windows.h>
-    #define LIBRARY_NAME "@loader_path/libeot.0.dll"
+    #define LIBRARY_NAME "@loader_path/libeot.dll"
 #elif defined(__APPLE__) || defined(__MACH__)
     #include <dlfcn.h>
     #define LIBRARY_NAME "@loader_path/libeot.0.dylib"
 #else
     #include <dlfcn.h>
-    #define LIBRARY_NAME "@loader_path/libeot.0.so"
+    #define LIBRARY_NAME "libeot.so.0.0.0"
 #endif
 
 using namespace v8;
