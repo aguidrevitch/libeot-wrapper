@@ -8,13 +8,13 @@
 
 #if defined(_WIN32) || defined(_WIN64)
     #include <windows.h>
-    #define LIBRARY_NAME "libeot.0.dll"
+    #define LIBRARY_NAME "@loader_path/libeot.0.dll"
 #elif defined(__APPLE__) || defined(__MACH__)
     #include <dlfcn.h>
-    #define LIBRARY_NAME "./libeot/.libs/libeot.0.dylib"
+    #define LIBRARY_NAME "@loader_path/libeot.0.dylib"
 #else
     #include <dlfcn.h>
-    #define LIBRARY_NAME "./libeot/.libs/libeot.0.so"
+    #define LIBRARY_NAME "@loader_path/libeot.0.so"
 #endif
 
 using namespace v8;

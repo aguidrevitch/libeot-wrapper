@@ -14,6 +14,12 @@
         "-leot.0"
    			"-Wl,-rpath,'$$ORIGIN'"
 	    ],
+      "copies": [
+        {
+          "destination": "<(module_root_dir)/build/Release",
+          "files": ["libeot/.libs/libeot.0.dylib"]
+        }
+      ],
       "actions": [
         {
           "action_name": "build_libeot",
