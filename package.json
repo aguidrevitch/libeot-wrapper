@@ -27,7 +27,8 @@
     "files": [
         "dist/**/*",
         "libeot/**/*",
-        "src/**/*"
+        "src/**/*",
+        "binding.gyp"
     ],
     "devDependencies": {
         "@types/node": "^22.4.0",
