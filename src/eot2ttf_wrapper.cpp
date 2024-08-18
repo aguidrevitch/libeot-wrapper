@@ -10,8 +10,7 @@
     #define LIBRARY_NAME "libeot.dll"
 #elif defined(__APPLE__) || defined(__MACH__)
     #include <dlfcn.h>
-    #include <mach-o/dyld.h>  // for _NSGetExecutablePath
-    #define LIBRARY_NAME "libeot.0.dylib"  // @loader_path is the directory of the current executable
+    #define LIBRARY_NAME "@loader_path/libeot.dylib"  // @loader_path is the directory of the current executable
 #else
     #include <dlfcn.h>
     #define LIBRARY_NAME "libeot.so"
