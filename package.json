@@ -1,6 +1,6 @@
 {
     "name": "@aguidrevitch/libeot-wrapper",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "main": "dist/binding.js",
     "types": "dist/binding.d.ts",
     "gypfile": true,
