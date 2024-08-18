@@ -133,10 +133,8 @@ NAN_METHOD(EOT2ttfBuffer) {
         return;
     }
 
-    DEBUG_LOG("calling CopyBuffer");
     // Create a Node.js Buffer from the output font buffer
     Local<Object> bufferOut = Nan::CopyBuffer(reinterpret_cast<char*>(fontOut), fontSizeOut).ToLocalChecked();
-    DEBUG_LOG("calling CopyBuffer done");
 
     // Free the output buffer allocated by the library
     free(fontOut);
