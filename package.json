@@ -7,8 +7,8 @@
     "scripts": {
         "pretest": "tsc",
         "preversion": "npm run lint && tsc && git diff -s --exit-code",
-        "lint": "eslint --ext .mts,.ts .",
-        "fix": "eslint --ext .mts,.ts . --fix",
+        "lint": "eslint --config .eslintrc.mjs",
+        "fix": "eslint --config .eslintrc.mjs --fix",
         "build": "tsc",
         "test": "node --napi-modules ./tests/test.mjs",
         "install": "node-gyp rebuild"
@@ -20,7 +20,6 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "eslint": "^8.38.0",
         "nan": "^2.20.0",
         "node-gyp": "^10.2.0"
     },
@@ -33,6 +32,8 @@
     "devDependencies": {
         "@types/node": "^22.4.0",
         "@typescript-eslint/eslint-plugin": "^8.1.0",
+        "eslint": "^9",
+        "eslint-config-prettier": "^9.1.0",
         "typescript": "^5.5.4"
     },
     "description": ""
